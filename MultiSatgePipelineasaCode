@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    stages{
+        stage('one'){
+            steps{
+                git 'https://github.com/rohanpathak333/java-project-maven-new.git'
+                sh 'mvn compile'
+            }
+        }
+        stage('two'){
+            steps{
+                sh 'mvn test'
+                sh 'mvn package'
+            }
+        }
+    }
+}
